@@ -7,7 +7,7 @@
 
 // // Parâmetros
 // // Chave de API
-// const appid = '6a236fbbf1dfbaa74facbb9e1a3468bf';
+// const appid = '';
 
 // // Cidade desejada
 // const q = 'Guarulhos';
