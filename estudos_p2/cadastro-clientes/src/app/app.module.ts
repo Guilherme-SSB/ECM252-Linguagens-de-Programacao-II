@@ -9,16 +9,19 @@ import { ClienteInserirComponent } from './clientes/clientes-inserir/cliente-ins
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ClienteListaComponent } from './clientes/cliente-lista/cliente-lista.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CabecalhoComponent,
-    ClienteInserirComponent
+    ClienteInserirComponent,
+    ClienteListaComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -26,6 +29,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
     MatIconModule,
     MatInputModule,
     MatToolbarModule
