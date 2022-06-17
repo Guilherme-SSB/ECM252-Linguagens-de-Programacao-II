@@ -1,0 +1,50 @@
+<h2>Exemplo de two-way data binding</h2>
+<div class="container my-3 border p-3">
+  <div class="form-group">
+    <label for="numeroInput">Escolha um número</label>
+    <!-- two-way data binding -> caixa de banana -> ngModel -->
+    <input type="number" class="form-control" id="numeroInput" placeholder="Escolha um número" [(ngModel)]="numero">
+    
+      </div>
+    <div class="alert alert-primary mt-3 p-3 text-center">{{numero}}</div>
+    <!-- Event binding no botao -->
+    <button (click)="escolher()" type="button" class="btn btn-primary">Escolher para mim</button> 
+</div>
+
+
+<!-- <h2>Exemplo de property binding</h2>
+<div class="container m-3 border p-3">
+  <form>
+    <div class="form-group mb-2">
+      <label for="nomeInput">Nome</label>
+      <input id="nomeInput" type="text" class="form-control" placeholder="Digite algo..." #nomeInput>
+    </div>
+    <button (click)="adicionar(nomeInput)" type="button" class="btn btn-primary">Adicionar</button>
+
+    <div class="alert alert-primary mt-3 p-3" [hidden]="esconderCaixa">
+      {{nome}}
+    </div>
+  </form>
+</div> -->
+
+<!-- <h2>Exemplo de event binding</h2>
+<div class="container m-3 border p-3">
+  <form>
+    <div class="form-group mb-2">
+      <label for="nomeInput">Nome</label>
+      <input (input)="alterarNome($event)" id="nomeInput" type="text" class="form-control" placeholder="Digite algo...">
+    </div>
+    <button (click)="adicionar()" type="button" class="btn btn-primary">Adicionar</button>
+
+    <div class="alert alert-primary mt-3 p-3">
+      {{nome}}
+    </div>
+
+  </form>
+</div> -->
+
+
+<!-- <h2>Exemplos de interpolação</h2>
+ 
+Meu nome é {{nome}} e tenho {{idade}} anos. <br>
+Valor sorteado: {{lancarDado()}} -->
