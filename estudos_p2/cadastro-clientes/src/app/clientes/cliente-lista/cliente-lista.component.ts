@@ -9,24 +9,12 @@ import { ClienteService } from '../cliente.service';
 })
 export class ClienteListaComponent implements OnInit {
 
-  @Input()
-  clientes: ClienteModel[] = [
-    // {
-    //   nome: 'José',
-    //   fone: '123456789',
-    //   email: 'jose@email.com'
-    // },
-    // {
-    //   nome: 'Maria',
-    //   fone: '123456789',
-    //   email: 'maria@email.com'
-    // }
-  ]
+  clientes: ClienteModel[] = []
 
   // Injeção de dependência
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
+    this.clientes = this.clienteService.getClientes();
   }
-
 }

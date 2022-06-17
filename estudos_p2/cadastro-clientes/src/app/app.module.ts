@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ClienteListaComponent } from './clientes/cliente-lista/cliente-lista.component';
 
+import { ClienteService } from './clientes/cliente.service';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { ClienteListaComponent } from './clientes/cliente-lista/cliente-lista.co
     MatInputModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
