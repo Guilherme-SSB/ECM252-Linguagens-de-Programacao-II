@@ -1,54 +1,70 @@
 <mat-card >
-    <mat-form-field appearance="fill">
-        <mat-label>Digite o nome</mat-label>
-        <input 
-            matInput
-            type="text"
-            [(ngModel)]="nome">
+
+    <!-- template driver form -->
+    <form (submit)="onAdicionarCliente(clienteForm)" #clienteForm="ngForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Digite o nome</mat-label>
+            <input 
+                matInput
+                type="text"
+                ngModel 
+                name="nome"
+                required
+                minlenght="3"
+                #nomeInput >
+            <button 
+                *ngIf="nomeInput.value" 
+                matSuffix
+                mat-icon-button
+                (click)="nomeInput.value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+            <mat-error>Digite um nome válido</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Digite o fone</mat-label>
+            <input 
+                matInput
+                type="text" 
+                ngModel
+                name="fone"
+                required
+                #foneInput>
+            <button 
+                *ngIf="foneInput.value" 
+                matSuffix
+                mat-icon-button
+                (click)="foneInput.value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+            <mat-error>Digite um fone válido</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Digite o e-mail</mat-label>
+            <input 
+                matInput
+                type="text" 
+                ngModel
+                name="email"
+                required
+                #emailInput>
+            <button 
+                *ngIf="emailInput.value" 
+                matSuffix
+                mat-icon-button
+                (click)="emailInput.value=''">
+                <mat-icon>close</mat-icon>
+            </button>
+            <mat-error>Digite um email válido</mat-error>
+        </mat-form-field>
+        
         <button 
-            *ngIf="nome" 
-            matSuffix
-            mat-icon-button
-            (click)="nome=''">
-            <mat-icon>close</mat-icon>
+            mat-raised-button
+            color="primary">
+            Inserir Cliente
         </button>
-    </mat-form-field>
-    
-    <mat-form-field appearance="fill">
-        <mat-label>Digite o fone</mat-label>
-        <input 
-            matInput
-            type="text" 
-            [(ngModel)]="fone">
-        <button 
-            *ngIf="fone" 
-            matSuffix
-            mat-icon-button
-            (click)="fone=''">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-    
-    <mat-form-field appearance="fill">
-        <mat-label>Digite o e-mail</mat-label>
-        <input 
-            matInput
-            type="text" 
-            [(ngModel)]="email">
-        <button 
-            *ngIf="email" 
-            matSuffix
-            mat-icon-button
-            (click)="email=''">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-    
-    <button 
-        mat-raised-button
-        color="primary"
-        (click)="onAdicionarCliente()" >
-        Inserir Cliente
-    </button>
+    </form>
 
 </mat-card>
