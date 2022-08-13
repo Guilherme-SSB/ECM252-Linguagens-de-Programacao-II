@@ -31,11 +31,22 @@ export class ClienteService {
       )
   }
 
+  removerCliente(id: string): void {
+    this.httpClient.delete(`http://localhost:3000/api/clientes/${id}`).subscribe(() => {
+      this.clientes = this.clientes.filter((cli) => {
+        return cli.id !==id
+      });
+      this.listaClientesAtualizada.next([...this.clientes]);
+      // console.log(`Cliente de id: ${id} removido`);
+    });
+  }
+
   adicionarCliente(nome: string, fone: string, email:string){
     const cliente: Cliente = {
       nome: nome,
       fone: fone,
-      email: email
+      email: email,
+      id: ""
     };
     this.httpClient.post<{mensagem: string}>('http://localhost:3000/api/clientes',
     cliente).subscribe(

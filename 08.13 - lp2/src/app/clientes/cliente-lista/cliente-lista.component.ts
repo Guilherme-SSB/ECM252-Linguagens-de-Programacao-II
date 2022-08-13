@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Cliente } from '../cliente.model';
 import { ClienteService } from '../cliente.service';
@@ -28,5 +28,8 @@ export class ClienteListaComponent implements OnInit, OnDestroy {
     this.clientesSubscription.unsubscribe();
   }
 
+  onDelete(id: string): void {
+    this.clienteService.removerCliente(id);
+  }
 
 }
