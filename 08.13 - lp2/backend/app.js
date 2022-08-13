@@ -52,7 +52,7 @@ app.post('/api/clientes', (req, res, next) => {
   .then( clienteInserido => {
     res.status(201).json({
       mensagem: 'Cliente inserido',
-      id: clienteInserido._id
+      id: clienteInserido._id 
     })
   })
 });
