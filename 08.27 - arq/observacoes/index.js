@@ -14,12 +14,15 @@ app.post('/lembretes/:id/observacoes', async (req, res) => {
 
     const observacoesDoLembrete = 
         observacoesPorLembreteId[req.params.id] || [];
-    observacoesDoLembrete.push({id: idObs, texto});
+    observacoesDoLembrete.push({id: idObs, texto, status: 'aguardando'});
     observacoesPorLembreteId[req.params.id] = observacoesDoLembrete;
     await axios.post('http://localhost:10000/eventos', {
         tipo: "ObservacaoCriada",
         dados: {
-            id: idObs, texto, lembreteId: req.params.id
+            id: idObs, 
+            texto, 
+            lembreteId: req.params.id, 
+            status: 'aguardando'
         }
     })
     res.status(201).send(observacoesDoLembrete);
@@ -30,7 +33,7 @@ app.get('/lembretes/:id/observacoes', (req, res) => {
 });
 
 app.post("/eventos", (req, res) => {
-    console.log(req.body);
+    funcoes[req.body.tipo](req.body.dados);
     res.status(200).send({msg: "ok"});
 })
 
