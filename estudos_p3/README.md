@@ -23,4 +23,4 @@ Extending Component will give you access to functions like componentDidMount, co
 
 ## Props vs. State in React 
 
-
+![alt text](props_vs_state.png "props_vs_state")
