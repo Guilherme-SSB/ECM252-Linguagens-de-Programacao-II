@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import Cores from '../constantes/Cores'
 import { Button, View, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
 
