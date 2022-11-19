@@ -68,3 +68,14 @@ Também é importante saber que o Redux tem 3 princípios, sendo:
 
 Por ser uma biblioteca o Redux pode até ser utilizado sozinho, mas ele é normalmente implementado em um conjunto de outras libs ou frameworks JavaScript (Ember, Vue, Angular…). Mas o comum mesmo, que você até já deve ter visto, é vê-lo em funcionamento com o React. É muito comum ver projetos e exemplos de React com Redux juntos, mas é bom deixar claro que o Redux não depende do React.
 
+### Defining mapStateToProps
+mapStateToProps should be defined as a function:
+
+```jsx
+function mapStateToProps(state, ownProps?)
+```
+
+It should take a first argument called `state`, optionally a second argument called `ownProps`, and return a plain object containing the data that the connected component needs.
+This function should be passed as the first argument to `connect`, and will be called every time when the Redux store state changes. If you do not wish to subscribe to the store, pass `null` or `undefined` to connect in place of `mapStateToProps`.
+
+It does not matter if a mapStateToProps function is written using the function keyword  `(function mapState(state) { } )` or as an arrow function `(const mapState = (state) => { } )` - it will work the same either way.
