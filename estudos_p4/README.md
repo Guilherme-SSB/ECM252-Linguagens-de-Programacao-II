@@ -45,3 +45,26 @@ O que passamos para o useState como argumento? O único argumento para o Hook us
 
 O que useState retorna? Ele retorna um par de valores: o state atual e uma função que atualiza o state. É por isso que escrevemos const [count, setCount] = useState(). Isto é similar ao this.state.count e this.setState em uma classe, exceto o fato de pegá-los em par. Se você não está familiarizado com a sintaxe que usamos, vamos voltar nisso no final dessa página.
 
+## React Redux
+Ele basicamente tira a responsabilidade de cada um dos componentes de armazenar os estados, deixando tudo isso centralizado, sendo utilizado ao mesmo tempo por todos os componentes de forma compartilhada. Ele também roda em diferentes ambientes como servidor, cliente e nativo.
+
+Fazendo o uso do Redux todos esses estados ficarão armazenados em uma árvore de objetos através do store. Para que isso aconteça, o Redux utiliza 3 recursos:
+
+- Store: você pode pensar em store como um container ou um grande centro de informações, que tem disponibilidade para receber e entregar o que o seu componente requisita. A store armazena de forma centralizada todos os estados da aplicação. Vale ressaltar que a store é imutável.
+
+- Actions: São ações disparadas da aplicação para o store. Elas são criadas através das action creators. As actions são a única forma de acionar uma mudança de estados no store.
+
+- Reducers: Cada dado da store deve ter o seu próprio reducer. Ele é encarregado de lidar com todas as ações e especificam como o estado da aplicação irá mudar de acordo com a action que foi enviada para o store.
+
+O fluxo geralmente funciona da seguinte forma: um componente gera uma interação através de um clique dado pelo usuário na interface - por exemplo, assim, um action creator é acionado e dispara uma ação para o store. Essa ação chega até um reducer que irá processar e fazer a alteração do estado no store. Assim um novo estado será disponibilizado para o componente.
+
+Também é importante saber que o Redux tem 3 princípios, sendo:
+
+- Todos os estados estarão disponíveis exclusivamente através do store: todo o estado da sua aplicação vai estar armazenado nesse store que é único, onde todos os componentes vão consultar nesse store.
+
+- Os estados são somente leitura: os componentes não podem fazer uma manipulação direta nas informações que estão nele.
+
+- As alterações são feitas através de funções puras: o Redux utiliza o conceito de programação funcional, por isso toda alteração no store é feita através de uma função pura, chamada de reducer. O reducer recebe o estado e a ação, onde com essa ação nós visualizamos o que precisa ser alterado no estado e o reduce entrega uma nova store do nosso estado da aplicação.
+
+Por ser uma biblioteca o Redux pode até ser utilizado sozinho, mas ele é normalmente implementado em um conjunto de outras libs ou frameworks JavaScript (Ember, Vue, Angular…). Mas o comum mesmo, que você até já deve ter visto, é vê-lo em funcionamento com o React. É muito comum ver projetos e exemplos de React com Redux juntos, mas é bom deixar claro que o Redux não depende do React.
+
