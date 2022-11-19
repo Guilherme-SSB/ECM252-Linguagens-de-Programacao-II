@@ -48,9 +48,11 @@ O que useState retorna? Ele retorna um par de valores: o state atual e uma funç
 ## React Redux
 Ele basicamente tira a responsabilidade de cada um dos componentes de armazenar os estados, deixando tudo isso centralizado, sendo utilizado ao mesmo tempo por todos os componentes de forma compartilhada. Ele também roda em diferentes ambientes como servidor, cliente e nativo.
 
+Store é a single source of truth. Os estados são somente de leitura e só podem ser alterados através das Actions. As alterações são feitas através de funções puras. Para transformar um estado, através das Actions, é utilizado os Reducers, que são funções puras que pegam o estado anterior - a ação - e retornam um novo estado.
+
 Fazendo o uso do Redux todos esses estados ficarão armazenados em uma árvore de objetos através do store. Para que isso aconteça, o Redux utiliza 3 recursos:
 
-- Store: você pode pensar em store como um container ou um grande centro de informações, que tem disponibilidade para receber e entregar o que o seu componente requisita. A store armazena de forma centralizada todos os estados da aplicação. Vale ressaltar que a store é imutável.
+- Store: você pode pensar em store como um container ou um grande centro de informações, que tem disponibilidade para receber e entregar o que o seu componente requisita. A store armazena de forma centralizada todos os estados da aplicação. Vale ressaltar que a store é imutável
 
 - Actions: São ações disparadas da aplicação para o store. Elas são criadas através das action creators. As actions são a única forma de acionar uma mudança de estados no store.
 
